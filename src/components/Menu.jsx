@@ -1,42 +1,24 @@
-// Librerias de react
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
-import "../styles/sass/base.sass"
-//Imagenes
+import { NavLink } from "react-router-dom";
 
 const Menu = () => {
-  const [state, setState] = useState(false);
-  const handleMenu = () => {
-    setState(!state);
-  };
+  const getClassName = ({ isActive }) =>
+    isActive ? "nav-link active" : "nav-link";
+
   return (
     <nav className="nav">
-        <NavLink
-            to=""
-            className="navLink"
-            onClick={handleMenu}
-          >Logo</NavLink>
-        <NavLink
-            to="/Crear"
-            className="navLink"
-            onClick={handleMenu}
-          >Crear</NavLink>
-        <NavLink
-              to="/Eliminar"
-              className="navLink"
-              onClick={handleMenu}
-            >Eliminar</NavLink>
-        <NavLink
-                to="/Mostrar"
-                className="navLink"
-                onClick={handleMenu}
-              >Mostrar</NavLink>
-        <NavLink
-                  to="/Actualizar"
-                  className="navLink"
-                  onClick={handleMenu}
-                >Actualizar</NavLink>
+      <NavLink to="/" className={getClassName}>
+        Inicio
+      </NavLink>
+      <NavLink to="/empleados" className={getClassName}>
+        Empleados
+      </NavLink>
+      <NavLink to="/habilidades" className={getClassName}>
+        Habilidades
+      </NavLink>
+      <NavLink to="/departamentos" className={getClassName}>
+        Departamentos
+      </NavLink>
     </nav>
   );
 };
