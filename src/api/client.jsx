@@ -1,10 +1,16 @@
 import axios from "axios";
+import { getRuntimeConfig } from "../config/runtimeConfig";
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8001/api",
   headers: {
     "Content-Type": "application/json",
   },
+});
+
+api.interceptors.request.use((config) => {
+  const { API_BASE_URL } = getRuntimeConfig();
+  config.baseURL = API_BASE_URL;
+  return config;
 });
 
 export default api;

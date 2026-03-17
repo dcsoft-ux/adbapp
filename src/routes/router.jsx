@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import EmpleadosPage from "../pages/EmpleadosPage";
 import HabilidadesPage from "../pages/HabilidadesPage";
 import DepartamentosPage from "../pages/DepartamentosPage";
+import ConfiguracionPage from "../pages/ConfiguracionPage";
 import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "empleados", element: <EmpleadosPage /> },
       { path: "habilidades", element: <HabilidadesPage /> },
       { path: "departamentos", element: <DepartamentosPage /> },
+      { path: "configuracion", element: <ConfiguracionPage /> },
     ],
   },
 ]);

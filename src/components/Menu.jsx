@@ -19,6 +19,9 @@ const Menu = () => {
       <NavLink to="/departamentos" className={getClassName}>
         Departamentos
       </NavLink>
+      <NavLink to="/configuracion" className={getClassName}>
+        Configuración
+      </NavLink>
     </nav>
   );
 };
